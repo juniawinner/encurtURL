@@ -30,14 +30,14 @@ i {
   width: 32px;
   height: 32px;
 
-  color: var(--color-text);
+  color: red;
 }
 
 h3 {
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 0.4rem;
-  color: var(--color-heading);
+  color: var(--vt-c-indigo);
 }
 
 @media (min-width: 1024px) {

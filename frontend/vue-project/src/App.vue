@@ -5,10 +5,25 @@ import TheWelcome from './components/TheWelcome.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <img alt="EncurtURL logo" class="logo" src="./assets/logo.svg" width="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HelloWorld msg="EncurtURL" />
+    </div>
+    <div class="github">
+      <article>
+        <h3>
+          <a
+            href="https://github.com/juniawinner"
+            title="Mulher negra e autodidata na teoria-prática sobre Tecnologia"
+          > <img src="./assets/github.svg" alt="GitHub de Junia Winner"> Junia Winner</a>
+        </h3>
+        <p>
+          Com Vue e TypeScript no frontend, a interface de usuário é moderna e funcional.
+          Já o TypeScripit com Node e Express no backend apresentam eficiência,
+          através do API/REST que se comunica com a base de dados (TypeORM e MongoDB).
+        </p>
+      </article>
     </div>
   </header>
 
@@ -18,7 +33,7 @@ import TheWelcome from './components/TheWelcome.vue'
 </template>
 
 <style>
-@import './assets/base.css';
+@import "./assets/base.css";
 
 #app {
   max-width: 1280px;
@@ -40,42 +55,57 @@ header {
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: rgb(177, 27, 27);
   transition: 0.4s;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+article {
+  text-align: center;
+  margin: 10% 0;
+  background-color: rgba(255, 255, 255, 0.100);
+  backdrop-filter: blur(15px);
+  color: var(--vt-c-black);
 }
 
 @media (min-width: 1024px) {
   body {
-    display: flex;
+    display: grid;
     place-items: center;
   }
 
   #app {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    grid-template-columns: 1fr 3fr;
+    padding: 0 1rem;
   }
 
   header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-areas:
+      "logo"
+      "wrapper"
+      "github";
+    grid-auto-flow: row;
+    grid-template-rows: auto;
+    grid-gap: 2%;
   }
 
   .logo {
-    margin: 0 2rem 0 0;
+    grid-area: logo;
+    text-align: center;
+    margin: 2rem 2rem 2rem 2rem;
+  }
+
+  header .wrapper {
+    grid-area: wrapper;
+    text-align: left;
+    margin: 0 30px 0 0;
+  }
+
+  .github {
+    grid-area: github;
+    text-align: left;
+    margin: 50px 30px 0 0;
   }
 }
 </style>
