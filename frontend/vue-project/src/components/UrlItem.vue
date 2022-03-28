@@ -30,7 +30,7 @@ i {
   width: 32px;
   height: 32px;
 
-  color: red;
+  color: rgb(255, 0, 0);
 }
 
 h3 {

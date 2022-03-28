@@ -71,9 +71,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(45deg,#e7d151, #219F94);
-  background-size: 500% 500%;
-  animation: colors 45s ease infinite;
+  background: linear-gradient(90deg,#13c471, #219F94, #cc4a76c4);
+  background-size: 400% 400%;
+  animation: colors 120s ease infinite;
 }
 
 @keyframes colors {

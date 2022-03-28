@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import Home from './components/Home.vue'
+import TheUrl from './components/TheUrl.vue'
 </script>
 
 <template>
@@ -8,27 +8,12 @@ import TheWelcome from './components/TheWelcome.vue'
     <img alt="EncurtURL logo" class="logo" src="./assets/logo.svg" width="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="EncurtURL" />
-    </div>
-    <div class="github">
-      <article>
-        <h3>
-          <a
-            href="https://github.com/juniawinner"
-            title="Mulher negra e autodidata na teoria-prática sobre Tecnologia"
-          > <img src="./assets/github.svg" alt="GitHub de Junia Winner"> Junia Winner</a>
-        </h3>
-        <p>
-          Com Vue e TypeScript no frontend, a interface de usuário é moderna e funcional.
-          Já o TypeScripit com Node e Express no backend apresentam eficiência,
-          através do API/REST que se comunica com a base de dados (TypeORM e MongoDB).
-        </p>
-      </article>
+      <Home msg="EncurtURL" />
     </div>
   </header>
 
   <main>
-    <TheWelcome />
+    <TheUrl />
   </main>
 </template>
 
@@ -59,14 +44,6 @@ a,
   transition: 0.4s;
 }
 
-article {
-  text-align: center;
-  margin: 10% 0;
-  background-color: rgba(255, 255, 255, 0.100);
-  backdrop-filter: blur(15px);
-  color: var(--vt-c-black);
-}
-
 @media (min-width: 1024px) {
   body {
     display: grid;
@@ -93,7 +70,7 @@ article {
   .logo {
     grid-area: logo;
     text-align: center;
-    margin: 2rem 2rem 2rem 2rem;
+    margin: 2rem 2rem;
   }
 
   header .wrapper {
