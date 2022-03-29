@@ -1,0 +1,19 @@
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,node
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,node
+
+### Node ###
+# Logs
+logs
+*.log
+npm-debug.log*
+.pnpm-debug.log*
+# Dependency directories
+node_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+### VisualStudioCode ###
+.vscode/*
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test

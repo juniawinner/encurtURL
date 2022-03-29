@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Servidor Express: API/REST para o frontend Vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/server.ts",
+    "prestart": "",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
+  },
+  "keywords": [
+    "servidor",
+    "express",
+    "API/REST",
+    "typescript"
+  ],
+  "author": "Junia Winner",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.4",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.23",
+    "@types/uuid": "^8.3.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}

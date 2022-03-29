@@ -2,7 +2,6 @@
 import api from '@/services/api';
 import { onMounted, ref } from 'vue';
 
-
 let dashboard = ref("#url-table")
 
 onMounted(() => {
