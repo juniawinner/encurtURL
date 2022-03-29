@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import UrlItem from './UrlItem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
 import DocumentationIcon from './icons/IconDocumentation.vue';
-import UrlRoleEncurtarLinks from './UrlRoleEncurtarLinks.vue';
+import UrlRoleShorten from './UrlRoleShorten.vue';
 </script>
 
 <template>
@@ -14,17 +13,9 @@ import UrlRoleEncurtarLinks from './UrlRoleEncurtarLinks.vue';
     <template #heading>Encurte as URLs favoritas aqui!</template>
     Em bate-papos online ou em postagens nas redes sociais, e até em referências de pesquisas escolares,
     as URLs curtas são simples e eficientes!
-    <template>
-      <UrlRoleEncurtarLinks />
-    </template>
-  </UrlItem>
-
-  <UrlItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Painel de URLs curtas</template>
-    Seja encurt friend e aproveite as funcionalidades de compartilhar, apagar e observar os detalhes das URLs encurtadas.
+    <br />
+    <br />
+    <UrlRoleShorten />
   </UrlItem>
 
   <UrlItem>
