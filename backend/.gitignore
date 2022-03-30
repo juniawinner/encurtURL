@@ -9,6 +9,7 @@ npm-debug.log*
 .pnpm-debug.log*
 # Dependency directories
 node_modules/
+dist/
 
 # TypeScript cache
 *.tsbuildinfo
@@ -17,3 +18,6 @@ node_modules/
 .vscode/*
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+
+# production
+build/
