@@ -8,6 +8,6 @@ app.use(bodyParser.json());
 
 app.listen(8080, () =>
   console.log(
-    "Express server has started. Open http://localhost:3000/ to see results"
+    "Express server has started. Open http://localhost:8080/ to see results"
   )
 );
