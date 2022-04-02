@@ -1,5 +1,7 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
+import { Url } from "../entities/Url";
+import { UrlMigration1648870959909 } from "./migrations/1648870959909-UrlMigration";
 
 export const AppDataSource = new DataSource({
   type: "mongodb",
@@ -8,8 +10,8 @@ export const AppDataSource = new DataSource({
   database: "encurt",
   synchronize: false,
   logging: false,
-  entities: [],
-  migrations: [],
+  entities: [Url],
+  migrations: [UrlMigration1648870959909],
   subscribers: [],
 });
 
