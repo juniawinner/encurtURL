@@ -9,7 +9,7 @@ export class UrlMigration1648870959909 implements MigrationInterface {
       url: { encurt_url: "http://localhost:8080/10000", chave: 10000 },
       total_visits: 0,
       title: "MongoDB Driver Node - Inserir um documento",
-      created_at: Date,
+      created_at: Date(),
     });
     console.log("Inserted documents =>", insertResult);
   }
@@ -21,7 +21,7 @@ export class UrlMigration1648870959909 implements MigrationInterface {
       url: { encurt_url: "http://localhost:8080/10000", chave: 10000 },
       total_visits: 0,
       title: "MongoDB Driver Node - Inserir um documento",
-      created_at: Date,
+      created_at: Date(),
     });
   }
 }
