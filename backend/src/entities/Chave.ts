@@ -6,13 +6,8 @@ export class Chave {
   id!: ObjectID;
 
   @Column()
-  chave: number;
+  chave!: string | number;
 
   @Column()
-  key_available: boolean;
-
-  constructor(chave: number, key_available: boolean) {
-    this.chave = chave;
-    this.key_available = key_available;
-  }
+  key_available!: boolean;
 }
