@@ -6,7 +6,7 @@ export class Chave {
   id!: ObjectID;
 
   @Column()
-  chave!: string | number;
+  chave!: string;
 
   @Column()
   key_available!: boolean;

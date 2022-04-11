@@ -1,18 +1,19 @@
 import { Request, RequestHandler, Response } from "express";
+import { env } from "process";
 import { generateEncurtUrl } from "../decorators/GenerateEncurtUrl";
 import { UrlRepository } from "../repositories/UrlRepository";
 
 export class UrlController {
   @generateEncurtUrl
-  chave!: string | number;
+  chave!: string;
+
   handle: RequestHandler = (req: Request, res: Response) => {
     try {
       let { original_url } = req.body;
-      let encurt_url = `http://localhost:8080/${this.chave}`;
 
-      let e_url = new URL(encurt_url);
-      let chave = e_url.pathname;
+      let chave = this.chave;
       console.log(chave);
+      let encurt_url = `${env.DOMAIN}${chave}`;
 
       let total_visits: number = 0;
 

@@ -6,8 +6,8 @@ export class UrlMigration1649316703628 implements MigrationInterface {
     const insertResult = await mongoQueryRunner.insertOne("url", {
       original_url:
         "https://www.mongodb.com/docs/drivers/node/current/usage-examples/insertOne/",
-      encurt_url: "http://localhost:8080/10000",
-      chave: 10000,
+      encurt_url: "http://localhost:8080/a00000a",
+      chave: "a00000a",
       total_visits: 0,
     });
     console.log("Inserted documents =>", insertResult);
@@ -17,8 +17,8 @@ export class UrlMigration1649316703628 implements MigrationInterface {
     await mongoQueryRunner.deleteOne("url", {
       original_url:
         "https://www.mongodb.com/docs/drivers/node/current/usage-examples/insertOne/",
-      encurt_url: "http://localhost:8080/10000",
-      chave: 10000,
+      encurt_url: "http://localhost:8080/a00000a",
+      chave: "a00000a",
       total_visits: 0,
     });
   }

@@ -12,7 +12,7 @@ export class Url {
   encurt_url!: string;
 
   @Column()
-  chave!: string | number;
+  chave!: string;
 
   @Column()
   total_visits!: number;

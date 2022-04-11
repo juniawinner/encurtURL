@@ -1,8 +1,10 @@
-export function generateEncurtUrl(target: any, propertyKey: string | number) {
+export function generateEncurtUrl(target: any, propertyKey: string) {
   const getter = () => {
-    let min = 10000;
-    let max = 99999;
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    const generateRandomString = function (length = 9) {
+      return Math.random().toString(20).substring(2, length);
+    };
+    const e_url = generateRandomString();
+    return e_url;
   };
   Object.defineProperty(target, propertyKey, {
     get: getter,
