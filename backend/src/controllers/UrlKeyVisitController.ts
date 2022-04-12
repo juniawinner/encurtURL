@@ -6,14 +6,16 @@ import { UrlKeyVisitRepository } from "../repositories/UrlKeyVisitRepository";
 
 export class UrlKeyVisitController {
   async handle(req: Request, res: Response) {
-    let chave = req.params;
-    console.log(chave);
-
     const repository = new UrlKeyVisitRepository(
       Url,
       new MongoEntityManager(AppDataSource)
     );
-    const result = await repository.findByChave(req.params.chave);
-    return res.json(result);
+
+    let total_visits = 2;
+    const keyParams = await repository.findByChave(req.params.chave);
+    const serverResponse = keyParams.filter(function keyValue(check: Url) {
+      res.redirect(301, check.original_url);
+      repository.update(check.id, { total_visits });
+    });
   }
 }
