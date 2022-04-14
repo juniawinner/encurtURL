@@ -11,14 +11,20 @@ export class UrlKeyVisitController {
       new MongoEntityManager(AppDataSource)
     );
 
-    const keyParams = await repository.findByChave(req.params.chave);
+    try {
+      const keyParams = await repository.findByChave(req.params.chave);
 
-    const serverResponse = keyParams.filter(async function resposta(data: Url) {
-      res.redirect(301, data.original_url);
+      const serverResponse = keyParams.filter(async function resposta(
+        data: Url
+      ) {
+        res.redirect(301, data.original_url);
 
-      let total_visits = data.total_visits + 1;
+        let total_visits = data.total_visits + 1;
 
-      await repository.update(data.id, { total_visits });
-    });
+        await repository.update(data.id, { total_visits });
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
 }

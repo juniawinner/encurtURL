@@ -7,12 +7,11 @@ export class UrlController {
   @generateEncurtUrl
   chave!: string;
 
-  handle: RequestHandler = (req: Request, res: Response) => {
+  handle: RequestHandler = async (req: Request, res: Response) => {
     try {
       let { original_url } = req.body;
 
       let chave = this.chave;
-      console.log(chave);
       let encurt_url = `${env.DOMAIN}${chave}`;
 
       let total_visits: number = 0;
@@ -23,7 +22,7 @@ export class UrlController {
         chave,
         total_visits,
       });
-      UrlRepository().save(data);
+      await UrlRepository().save(data);
 
       return res.status(201).json(`A URL curta favorita é: ${encurt_url}`);
     } catch (error) {
