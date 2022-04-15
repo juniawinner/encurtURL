@@ -17,7 +17,7 @@ export class UrlKeyVisitController {
       const serverResponse = keyParams.filter(async function resposta(
         data: Url
       ) {
-        res.redirect(301, data.original_url);
+        res.set("Cache-Control", "no-store").redirect(301, data.original_url);
 
         let total_visits = data.total_visits + 1;
 
