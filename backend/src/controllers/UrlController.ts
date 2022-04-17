@@ -1,32 +1,30 @@
 import { Request, RequestHandler, Response } from "express";
-import { env } from "process";
-import { generateEncurtUrl } from "../decorators/GenerateEncurtUrl";
-import { UrlRepository } from "../repositories/UrlRepository";
+import { Chave } from "../entities/Chave";
+import { KeyReuseRepository } from "../repositories/KeyReuseRepository";
+import { ChaveService } from "../services/ChaveService";
+import { UrlService } from "../services/UrlService";
 
 export class UrlController {
-  @generateEncurtUrl
-  chave!: string;
-
   handle: RequestHandler = async (req: Request, res: Response) => {
-    try {
-      let { original_url } = req.body;
+    const repository = KeyReuseRepository();
 
-      let chave = this.chave;
-      let encurt_url = `${env.DOMAIN}${chave}`;
+    const searchAvailableKey = await repository.find({
+      select: { key_available: true },
+      where: { key_available: true },
+    });
 
-      let total_visits: number = 0;
+    let { original_url } = req.body;
 
-      let data = UrlRepository().create({
-        original_url,
-        encurt_url,
-        chave,
-        total_visits,
-      });
-      await UrlRepository().save(data);
+    if (searchAvailableKey.find(async (data: Chave) => data.key_available)) {
+      const chaveService = new ChaveService();
+      const resultOne = await chaveService.execute({ original_url });
 
-      return res.status(201).json(`A URL curta favorita é: ${encurt_url}`);
-    } catch (error) {
-      console.error(error);
+      return res.status(201).json(resultOne);
+    } else {
+      const urlService = new UrlService();
+      const resultTwo = await urlService.execute({ original_url });
+
+      return res.status(201).json(resultTwo);
     }
   };
 }
