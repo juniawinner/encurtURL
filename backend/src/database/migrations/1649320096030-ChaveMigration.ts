@@ -5,7 +5,7 @@ export class ChaveMigration1649320096030 implements MigrationInterface {
   public async up(mongoQueryRunner: MongoQueryRunner): Promise<void> {
     const insertResult = await mongoQueryRunner.insertOne("chave", {
       chave: "a00a00a",
-      key_available: true,
+      key_available: false,
     });
     console.log("Inserted documents =>", insertResult);
   }
@@ -13,7 +13,7 @@ export class ChaveMigration1649320096030 implements MigrationInterface {
   public async down(mongoQueryRunner: MongoQueryRunner): Promise<void> {
     await mongoQueryRunner.deleteOne("chave", {
       chave: "a00a00a",
-      key_available: true,
+      key_available: false,
     });
   }
 }
