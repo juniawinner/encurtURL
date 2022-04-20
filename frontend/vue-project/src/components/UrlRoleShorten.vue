@@ -1,8 +1,8 @@
-<script setup lang="ts">import api from '@/services/api';
+<script setup lang="ts">
+import api from '@/services/api';
 import { ref } from 'vue';
 
-
-let original_url: string;
+let original_url = ref()
 
 let serverReponse = ref()
 
@@ -11,9 +11,9 @@ const axiosUrlForm = async (e: Event) => {
     e.preventDefault();
 
     await api.post("/urls", {
-        original_url: original_url
+        original_url: original_url.value
     })
-        .then(response => (serverReponse.value = response))
+        .then(response => (serverReponse.value = response.data))
         .catch(function (err: Error) {
             console.error(err)
         })
@@ -23,11 +23,11 @@ const axiosUrlForm = async (e: Event) => {
 
 <template>
     <form id="url-form" method="post" @submit="axiosUrlForm">
-        <label for="url-original" class="url-rotulo">Cole sua URL favorita aqui: {{ original_url }} </label>
+        <label for="url-original" class="url-rotulo">Cole sua URL favorita aqui</label>
         <br />
-        <input id="url-original" class="url-entrada" type="text" v-model.lazy="original_url" />
+        <input id="url-original" class="url-entrada" type="text" v-model="original_url" />
         <button class="url-form-btn" type="submit">Encurtar URL</button>
-        <p>URLs Curtas: {{ serverReponse }}</p>
+        <p>Resultado: {{ serverReponse }}</p>
     </form>
 </template>
  
