@@ -1,27 +1,7 @@
 <script setup lang="ts">
-import api from '@/services/api';
-import { inject, ref } from 'vue';
+import { inject } from 'vue';
 
 let serverReponse = inject("serverReponse")
-
-let encurt_url = ref(serverReponse)
-
-let message = ref("Apagar")
-
-const axiosUrlDelete = async (e: Event) => {
-
-    e.preventDefault();
-
-    await api.delete("/urls", {
-        data: {
-            encurt_url: encurt_url.value
-        }
-    })
-        .then(response => (message.value = response.data))
-        .catch(function (error) {
-            console.error(error);
-        });
-}
 </script>
 
 <template>
@@ -35,11 +15,12 @@ const axiosUrlDelete = async (e: Event) => {
         <table>
             <tr>
                 <th>URL Curta</th>
-                <th>Excluir URL Curta</th>
+                <th>Compartilhar</th>
             </tr>
             <tr>
                 <td>{{ serverReponse }}</td>
-                <td><button class="url-delete-btn" @click="axiosUrlDelete">{{ message }}</button></td>
+                <td><button><a id="twitter-wjs" href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                            class="twitter-share-button" data-show-count="false">Tweet</a></button></td>
             </tr>
         </table>
     </section>
@@ -66,9 +47,5 @@ th {
 
 hr {
     border: 1px solid black;
-}
-
-.url-delete-btn {
-    cursor: pointer;
 }
 </style>

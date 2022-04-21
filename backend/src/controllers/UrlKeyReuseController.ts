@@ -26,7 +26,7 @@ export class UrlKeyReuseController {
 
         await repository.delete(data.id);
 
-        return res.json("A URL foi excluída com sucesso");
+        return res.json("A URL foi excluída com sucesso!");
       });
     } catch (error) {
       console.error(error);

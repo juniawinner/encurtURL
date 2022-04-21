@@ -2,7 +2,10 @@
 import UrlItem from './UrlItem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import DocumentationIcon from './icons/IconDocumentation.vue';
+import EcosystemIcon from './icons/IconEcosystem.vue';
 import UrlRoleShorten from './UrlRoleShorten.vue';
+import UrlRoleRecoverData from './UrlRoleRecoverData.vue';
+import UrlRoleKeyReuse from './UrlRoleKeyReuse.vue';
 </script>
 
 <template>
@@ -22,9 +25,22 @@ import UrlRoleShorten from './UrlRoleShorten.vue';
     <template #icon>
       <DocumentationIcon />
     </template>
-    <template #heading>Resgatar informações das URLs curtas</template>
-    Caso você limpe o histórico do seu navegador Web, não se preocupe! Aqui os encurts friends
-    conseguem resgatar informações sobre as URLs curtas.
-    Por exemplo, resgatar o número de visitas aos seus links favoritos.
+    <template #heading>Resgatar informações das URLs favoritas</template>
+    Quer descobrir o número de visitas à URL curta? Não se preocupe, aqui os encurts friends
+    conseguem resgatar informações sobre as URLs favoritas.
+    <br>
+    <br>
+    <UrlRoleRecoverData />
+  </UrlItem>
+
+  <UrlItem>
+    <template #icon>
+      <EcosystemIcon />
+    </template>
+    <template #heading>Excluir informações das URLs curtas</template>
+    Aqui os encurts friends conseguem apagar todas as informações sobre as URLs curtas.
+    <br>
+    <br>
+    <UrlRoleKeyReuse />
   </UrlItem>
 </template>
