@@ -38,7 +38,7 @@ export class ChaveService {
         await repository.delete(data.id);
       });
 
-      return `A URL curta favorita é: ${this.encurt_url}`;
+      return `${this.encurt_url}`;
     } catch (error) {
       console.error(error);
     }

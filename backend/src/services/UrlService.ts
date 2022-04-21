@@ -24,6 +24,6 @@ export class UrlService {
     });
     await UrlRepository().save(data);
 
-    return `A URL curta favorita é: ${encurt_url}`;
+    return `${encurt_url}`;
   }
 }

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import api from '@/services/api';
-import { ref } from 'vue';
+import { provide, ref } from 'vue';
+import UrlRoleShortenDashboard from './UrlRoleShortenDashboard.vue';
 
 let original_url = ref()
 
@@ -14,11 +15,12 @@ const axiosUrlForm = async (e: Event) => {
         original_url: original_url.value
     })
         .then(response => (serverReponse.value = response.data))
-        .catch(function (err: Error) {
-            console.error(err)
+        .catch(function (error) {
+            console.error(error)
         })
 }
 
+provide("serverReponse", serverReponse)
 </script>
 
 <template>
@@ -27,8 +29,9 @@ const axiosUrlForm = async (e: Event) => {
         <br />
         <input id="url-original" class="url-entrada" type="text" v-model="original_url" />
         <button class="url-form-btn" type="submit">Encurtar URL</button>
-        <p>Resultado: {{ serverReponse }}</p>
     </form>
+
+    <UrlRoleShortenDashboard />
 </template>
  
 <style scoped>
