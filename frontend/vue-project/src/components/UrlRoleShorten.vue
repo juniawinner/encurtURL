@@ -45,6 +45,15 @@ provide("serverReponse", serverReponse)
 }
 
 .url-form-btn {
+    cursor: pointer;
+    transition-duration: 0.3s;
+    height: 2rem;
     margin: 0.4rem 0 1.5rem 0;
+    border-radius: 8px;
+}
+
+.url-form-btn:hover {
+    background-color: rgb(34, 145, 179);
+    color: white;
 }
 </style>

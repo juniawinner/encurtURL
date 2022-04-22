@@ -25,8 +25,7 @@ const axiosUrlDelete = async (e: Event) => {
 <template>
     <section>
         <p>{{ message }}</p>
-        <input id="url-encurt" class="url-delete" placeholder="Cole a URL curta aqui" type="url"
-            v-model="encurt_url">
+        <input id="url-encurt" class="url-delete" placeholder="Cole a URL curta aqui" type="url" v-model="encurt_url">
         <button class="url-delete-btn" @click="axiosUrlDelete">Excluir</button>
     </section>
 </template>
@@ -39,6 +38,14 @@ const axiosUrlDelete = async (e: Event) => {
 
 .url-delete-btn {
     cursor: pointer;
+    transition-duration: 0.3s;
     height: 2rem;
+    margin: 0 0 0 1%;
+    border-radius: 8px;
+}
+
+.url-delete-btn:hover {
+    background-color: rgb(34, 145, 179);
+    color: white;
 }
 </style>

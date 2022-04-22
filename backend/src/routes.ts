@@ -7,7 +7,7 @@ import { UrlRecoverDataController } from "./controllers/UrlRecoverDataController
 export const routes = Router();
 
 routes.post("/urls", new UrlController().handle);
-routes.get("/urls", new UrlRecoverDataController().handle);
+routes.post("/urls/recover-data", new UrlRecoverDataController().handle);
 routes.delete("/urls", new UrlKeyReuseController().handle);
 
 //https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes#route_parameters

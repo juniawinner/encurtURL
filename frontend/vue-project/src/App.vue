@@ -37,7 +37,6 @@ header {
   margin: 0 auto 2rem;
 }
 
-a,
 .green {
   text-decoration: none;
   color: rgb(177, 27, 27);

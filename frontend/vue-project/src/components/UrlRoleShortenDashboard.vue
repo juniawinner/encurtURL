@@ -10,7 +10,6 @@ let serverReponse = inject("serverReponse")
             apagar e observar os detalhes das URLs encurtadas:
         </p>
         <br>
-        <hr>
         <p class="title-table">Painel de URLs Favoritas</p>
         <table>
             <tr>
@@ -40,12 +39,8 @@ table {
 
 td,
 th {
-    border: 2px solid black;
+    border: 2px solid rgb(7, 87, 112);
     text-align: center;
     padding: 1%;
-}
-
-hr {
-    border: 1px solid black;
 }
 </style>
