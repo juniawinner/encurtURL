@@ -48,18 +48,24 @@ provide("dataOriginalUrl", dataOriginalUrl)
 .url-post {
     width: 70%;
     height: 2rem;
+    border: 2px solid rgb(238, 36, 36);
 }
 
 .url-post-btn {
+    background-color: transparent;
     cursor: pointer;
     transition-duration: 0.3s;
     height: 2rem;
     margin: 0 0 0 1%;
-    border-radius: 8px;
+    padding: 0 2%;
+    border-radius: 0 20px 0 20px;
+    border: 2px outset rgb(238, 36, 36);
+    color: rgb(177, 27, 27);
+    font-weight: bold;
 }
 
 .url-post-btn:hover {
-    background-color: rgb(34, 145, 179);
-    color: white;
+    background-color: #96ceb4ff;
+    font-weight: bold;
 }
 </style>

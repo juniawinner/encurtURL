@@ -13,9 +13,9 @@ import UrlRoleKeyReuse from './UrlRoleKeyReuse.vue';
     <template #icon>
       <CommunityIcon />
     </template>
-    <template #heading>Encurte as URLs favoritas aqui!</template>
-    Em bate-papos online ou em postagens nas redes sociais, e até em referências de pesquisas escolares,
-    as URLs curtas são simples e eficientes!
+    <template #heading>Encurtar as URLs favoritas</template>
+    Em bate-papos online ou em postagens nas redes sociais, e até em referências de
+    pesquisas escolares, as URLs curtas são simples e eficientes!
     <br />
     <br />
     <UrlRoleShorten />
@@ -27,7 +27,8 @@ import UrlRoleKeyReuse from './UrlRoleKeyReuse.vue';
     </template>
     <template #heading>Resgatar informações das URLs favoritas</template>
     Quer descobrir o número de visitas à URL curta? Não se preocupe, aqui os encurts friends
-    conseguem resgatar informações sobre as URLs favoritas.
+    conseguem resgatar as seguintes informações: o total de visitas e a chave 
+    identificadora da Url curta, mais a Url longa original.
     <br>
     <br>
     <UrlRoleRecoverData />
@@ -38,7 +39,8 @@ import UrlRoleKeyReuse from './UrlRoleKeyReuse.vue';
       <EcosystemIcon />
     </template>
     <template #heading>Excluir informações das URLs curtas</template>
-    Aqui os encurts friends conseguem apagar todas as informações sobre as URLs curtas.
+    Aqui os encurts friends conseguem apagar informações sobre URLs que não
+    possuem mais utilidade.
     <br>
     <br>
     <UrlRoleKeyReuse />

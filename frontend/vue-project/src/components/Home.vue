@@ -15,16 +15,18 @@ defineProps<{
   <div class="github">
     <article>
       <h3>
-        <a
-          href="https://github.com/juniawinner"
-          title="Mulher negra e autodidata na teoria-prática sobre Tecnologia"
-        >
+        <a href="https://github.com/juniawinner" title="Mulher negra e autodidata na teoria-prática sobre Tecnologia">
           <img src="src/assets/github.svg" alt="GitHub de Junia Winner" /> Junia Winner
         </a>
       </h3>
+      <br>
       <p>
-        Com Vue e TypeScript no frontend, a interface de usuário é moderna e funcional.
-        Já o TypeScripit com Node e Express no backend apresentam eficiência,
+        Site para encurtamento de URLs.
+        <br>
+        A interface de usuário, com design moderno e intuitivo,
+        foi desenvolvido com Vue e TypeScript.
+        <br>
+        Ademais, a tipagem estática no backend maximiza a eficiência do Node/Express,
         através do API/REST que se comunica com a base de dados (TypeORM e MongoDB).
       </p>
     </article>
@@ -48,11 +50,11 @@ h2 {
 }
 
 article {
+  background-color: #96ceb4ff;
+  font-family: American Typewriter, serif;
   text-align: center;
-  margin: 10% 0;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
   color: var(--vt-c-black);
+  margin: 10% 0;
 }
 
 @media (min-width: 1024px) {
@@ -60,6 +62,7 @@ article {
     text-align: left;
     font-size: 2rem;
   }
+
   .greetings h2 {
     text-align: left;
     font-size: 1rem;

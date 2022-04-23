@@ -40,7 +40,6 @@ header {
 .green {
   text-decoration: none;
   color: rgb(177, 27, 27);
-  transition: 0.4s;
 }
 
 @media (min-width: 1024px) {
@@ -64,6 +63,7 @@ header {
     grid-auto-flow: row;
     grid-template-rows: auto;
     grid-gap: 2%;
+    border-right: 2px dashed rgb(238, 36, 36);
   }
 
   .logo {

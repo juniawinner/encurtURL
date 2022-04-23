@@ -5,7 +5,7 @@ let serverReponse = inject("serverReponse")
 </script>
 
 <template>
-    <section>
+    <section v-show="serverReponse">
         <p>Seja encurt friend e aproveite as funcionalidades de compartilhar,
             apagar e observar os detalhes das URLs encurtadas:
         </p>
@@ -29,6 +29,7 @@ let serverReponse = inject("serverReponse")
 .title-table {
     text-align: center;
     font-weight: bold;
+    color:rgba(13, 71, 90, 0.959);
     margin: 1% 0;
 }
 
@@ -42,5 +43,10 @@ th {
     border: 2px solid rgb(7, 87, 112);
     text-align: center;
     padding: 1%;
+}
+
+th {
+    font-weight: bold;
+    color: rgba(13, 71, 90, 0.959);
 }
 </style>
