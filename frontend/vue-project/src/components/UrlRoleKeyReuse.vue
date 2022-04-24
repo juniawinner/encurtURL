@@ -19,6 +19,11 @@ const axiosUrlDelete = async (e: Event) => {
         .catch(function (error) {
             console.error(error);
         });
+
+    setTimeout(() => {
+        message.value = "Você deseja excluir a URL curta?";
+        encurt_url.value = "";
+    }, 3000);
 }
 </script>
 
