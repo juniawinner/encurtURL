@@ -23,15 +23,19 @@ const axiosUrlDelete = async (e: Event) => {
     setTimeout(() => {
         message.value = "Você deseja excluir a URL curta?";
         encurt_url.value = "";
-    }, 3000);
+    }, 4000);
 }
 </script>
 
 <template>
     <section>
         <p>{{ message }}</p>
-        <input id="url-encurt" class="url-delete" placeholder="Cole a URL curta aqui" type="url" v-model="encurt_url">
-        <button class="url-delete-btn" @click="axiosUrlDelete">Excluir</button>
+
+        <form class="url-form-reuse" @submit="axiosUrlDelete">
+            <input id="url-encurt-reuse" class="url-delete" placeholder="Cole a URL curta aqui" type="url"
+                v-model="encurt_url" required>
+            <button class="url-delete-btn" type="submit">Excluir</button>
+        </form>
     </section>
 </template>
 

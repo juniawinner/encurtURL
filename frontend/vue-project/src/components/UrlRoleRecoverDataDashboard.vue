@@ -6,6 +6,8 @@ let dataTotalVisits = inject("dataTotalVisits")
 let dataKey = inject("dataKey")
 
 let dataOriginalUrl = inject("dataOriginalUrl")
+
+let warning = inject("warning")
 </script>
 
 <template>
@@ -28,6 +30,8 @@ let dataOriginalUrl = inject("dataOriginalUrl")
 
         </ul>
     </section>
+
+    <p class="warning">{{ warning }}</p>
 </template>
 
 <style scoped>
@@ -67,6 +71,12 @@ li>span {
 
 li>span:last-child {
     text-align: right;
+}
+
+.warning {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(177, 27, 27);
 }
 
 @media (min-width: 1024px) {

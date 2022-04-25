@@ -11,6 +11,8 @@ let dataKey = ref()
 
 let dataOriginalUrl = ref()
 
+let warning = ref()
+
 const axiosUrlPost = async (e: Event) => {
 
     e.preventDefault();
@@ -19,9 +21,20 @@ const axiosUrlPost = async (e: Event) => {
         encurt_url: encurt_url.value
     })
         .then(response => {
-            dataTotalVisits.value = response.data.total_visits,
-                dataKey.value = response.data.chave,
-                dataOriginalUrl.value = response.data.original_url
+            if (response.status === 201) {
+                dataTotalVisits.value = response.data.total_visits,
+                    dataKey.value = response.data.chave,
+                    dataOriginalUrl.value = response.data.original_url
+            } else if (response.status === 200) {
+                warning.value = response.data,
+                    dataTotalVisits.value = "",
+                    dataKey.value = "",
+                    dataOriginalUrl.value = ""
+
+                setTimeout(() => {
+                    warning.value = "";
+                }, 4000);
+            }
         })
         .catch(function (error) {
             console.error(error);
@@ -31,16 +44,16 @@ const axiosUrlPost = async (e: Event) => {
 provide("dataTotalVisits", dataTotalVisits)
 provide("dataKey", dataKey)
 provide("dataOriginalUrl", dataOriginalUrl)
+provide("warning", warning)
 </script>
 
 <template>
-    <section>
+    <form class="url-form-recover" method="post" @submit="axiosUrlPost">
         <input id="url-encurt-recover" class="url-post" placeholder="Cole a URL curta aqui" type="url"
-            v-model="encurt_url">
-        <button class="url-post-btn" @click="axiosUrlPost">Enviar</button>
-    </section>
+            v-model="encurt_url" required>
+        <button class="url-post-btn" type="submit">Enviar</button>
+    </form>
     <br>
-
     <UrlRoleRecoverDataDashboard />
 </template>
 

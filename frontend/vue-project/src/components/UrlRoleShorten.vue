@@ -28,7 +28,7 @@ provide("serverReponse", serverReponse)
         <label for="url-original" class="url-rotulo">Cole a URL longa aqui</label>
         <br />
         <input id="url-original" class="url-entrada" placeholder="https://www.exemplo.com.br/url-super-gigante"
-            type="url" v-model="original_url" />
+            type="url" v-model="original_url" required>
         <button class="url-form-btn" type="submit">Encurtar URL</button>
     </form>
 
