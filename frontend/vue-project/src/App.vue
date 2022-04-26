@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Home from './components/Home.vue'
 import TheUrl from './components/TheUrl.vue'
+import ProjectAuthor from './components/ProjectAuthor.vue'
 </script>
 
 <template>
@@ -15,6 +16,10 @@ import TheUrl from './components/TheUrl.vue'
   <main>
     <TheUrl />
   </main>
+
+  <footer>
+    <ProjectAuthor />
+  </footer>
 </template>
 
 <style>
@@ -50,16 +55,19 @@ header {
 
   #app {
     display: grid;
+    grid-template-areas:
+      "header main"
+      "footer footer";
     grid-template-columns: 1fr 3fr;
     padding: 0 1rem;
   }
 
   header {
+    grid-area: header;
     display: grid;
     grid-template-areas:
       "logo"
-      "wrapper"
-      "github";
+      "wrapper";
     grid-auto-flow: row;
     grid-template-rows: auto;
     grid-gap: 2%;
@@ -78,10 +86,12 @@ header {
     margin: 0 30px 0 0;
   }
 
-  .github {
-    grid-area: github;
-    text-align: left;
-    margin: 50px 30px 0 0;
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
   }
 }
 </style>
