@@ -8,6 +8,7 @@ export class UrlMigration1649316703628 implements MigrationInterface {
         "https://www.mongodb.com/docs/drivers/node/current/usage-examples/insertOne/",
       encurt_url: "http://localhost:8080/a00000a",
       chave: "a00000a",
+      title: "MongoDB Drivers Node: Insert a Document",
       total_visits: 0,
     });
     console.log("Inserted documents =>", insertResult);
@@ -19,6 +20,7 @@ export class UrlMigration1649316703628 implements MigrationInterface {
         "https://www.mongodb.com/docs/drivers/node/current/usage-examples/insertOne/",
       encurt_url: "http://localhost:8080/a00000a",
       chave: "a00000a",
+      title: "MongoDB Drivers Node: Insert a Document",
       total_visits: 0,
     });
   }

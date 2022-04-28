@@ -5,7 +5,7 @@ let dataTotalVisits = inject("dataTotalVisits")
 
 let dataKey = inject("dataKey")
 
-let dataOriginalUrl = inject("dataOriginalUrl")
+let dataTitle = inject("dataTitle")
 
 let warning = inject("warning")
 </script>
@@ -24,8 +24,8 @@ let warning = inject("warning")
                 <span>{{ dataKey }}</span>
             </li>
             <li>
-                <span class="title">Url longa:</span>
-                <span>{{ dataOriginalUrl }}</span>
+                <span class="title">Título:</span>
+                <span>{{ dataTitle }}</span>
             </li>
 
         </ul>

@@ -1,5 +1,6 @@
 export interface UrlDTO {
-  original_url: string;
-  chave: string;
+  title: string;
   total_visits: number;
+  encurt_url?: string;
+  chave?: string;
 }

@@ -3,7 +3,7 @@ import api from '@/services/api';
 import { provide, ref } from 'vue';
 import UrlRoleShortenDashboard from './UrlRoleShortenDashboard.vue';
 
-let original_url = ref()
+let original_URL = ref()
 
 let serverReponse = ref()
 
@@ -12,7 +12,7 @@ const axiosUrlForm = async (e: Event) => {
     e.preventDefault();
 
     await api.post("/urls", {
-        original_url: original_url.value
+        original_URL: original_URL.value
     })
         .then(response => (serverReponse.value = response.data))
         .catch(function (error) {
@@ -28,7 +28,7 @@ provide("serverReponse", serverReponse)
         <label for="url-original" class="url-rotulo">Cole a URL longa aqui</label>
         <br />
         <input id="url-original" class="url-entrada" placeholder="https://www.exemplo.com.br/url-super-gigante"
-            type="url" v-model="original_url" required>
+            type="url" v-model="original_URL" required>
         <button class="url-form-btn" type="submit">Encurtar URL</button>
     </form>
 

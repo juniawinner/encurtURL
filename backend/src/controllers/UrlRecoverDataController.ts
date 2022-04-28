@@ -11,12 +11,14 @@ export class UrlRecoverDataController {
 
   handle: RequestHandler = async (req: Request, res: Response) => {
     let { encurt_url } = req.body;
+    let excludePossibleBlanks = `${encurt_url}`;
+    let url = excludePossibleBlanks.trim();
 
     const repo = UrlRepository();
 
     const search = await repo.find({
       select: { encurt_url: true },
-      where: { encurt_url: `${encurt_url}` },
+      where: { encurt_url: `${url}` },
     });
 
     if (search.find(async (dataEncurt: Url) => dataEncurt.encurt_url)) {
@@ -26,11 +28,11 @@ export class UrlRecoverDataController {
       );
 
       try {
-        const e_url = await repository.findByEncurtURL(encurt_url);
+        const e_url = await repository.findByEncurtURL(url);
 
         const serverResponse = e_url.filter(async (data: Url) => {
           this.dto = {
-            original_url: data.original_url,
+            title: data.title,
             chave: data.chave,
             total_visits: data.total_visits,
           };

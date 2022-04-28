@@ -28,7 +28,7 @@ import UrlRoleKeyReuse from './UrlRoleKeyReuse.vue';
     <template #heading>Resgatar informações das URLs favoritas</template>
     Quer descobrir o número de visitas à URL curta? Não se preocupe, aqui os encurts friends
     conseguem resgatar as seguintes informações: o total de visitas e a chave 
-    identificadora da Url curta, mais a Url longa original.
+    identificadora da Url curta, mais o título da Url longa original.
     <br>
     <br>
     <UrlRoleRecoverData />

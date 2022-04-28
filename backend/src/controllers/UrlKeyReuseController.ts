@@ -9,12 +9,14 @@ import { UrlRepository } from "../repositories/UrlRepository";
 export class UrlKeyReuseController {
   handle: RequestHandler = async (req: Request, res: Response) => {
     let { encurt_url } = req.body;
+    let excludePossibleBlanks = `${encurt_url}`;
+    let url = excludePossibleBlanks.trim();
 
     const repo = UrlRepository();
 
     const search = await repo.find({
       select: { encurt_url: true },
-      where: { encurt_url: `${encurt_url}` },
+      where: { encurt_url: `${url}` },
     });
 
     if (search.find(async (dataEncurt: Url) => dataEncurt.encurt_url)) {
@@ -24,7 +26,7 @@ export class UrlKeyReuseController {
       );
 
       try {
-        const e_url = await repository.findByEncurtURL(encurt_url);
+        const e_url = await repository.findByEncurtURL(url);
 
         const reuse = e_url.filter(async function recycle(data: Url) {
           let chave = data.chave;

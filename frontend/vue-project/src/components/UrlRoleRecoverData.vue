@@ -9,7 +9,7 @@ let dataTotalVisits = ref()
 
 let dataKey = ref()
 
-let dataOriginalUrl = ref()
+let dataTitle = ref()
 
 let warning = ref()
 
@@ -24,12 +24,12 @@ const axiosUrlPost = async (e: Event) => {
             if (response.status === 201) {
                 dataTotalVisits.value = response.data.total_visits,
                     dataKey.value = response.data.chave,
-                    dataOriginalUrl.value = response.data.original_url
+                    dataTitle.value = response.data.title
             } else if (response.status === 200) {
                 warning.value = response.data,
                     dataTotalVisits.value = "",
                     dataKey.value = "",
-                    dataOriginalUrl.value = ""
+                    dataTitle.value = ""
 
                 setTimeout(() => {
                     warning.value = "";
@@ -43,7 +43,7 @@ const axiosUrlPost = async (e: Event) => {
 
 provide("dataTotalVisits", dataTotalVisits)
 provide("dataKey", dataKey)
-provide("dataOriginalUrl", dataOriginalUrl)
+provide("dataTitle", dataTitle)
 provide("warning", warning)
 </script>
 

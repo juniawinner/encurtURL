@@ -13,7 +13,9 @@ export class UrlController {
       where: { key_available: true },
     });
 
-    let { original_url } = req.body;
+    let { original_URL } = req.body;
+    let excludePossibleBlanks = `${original_URL}`;
+    let original_url = excludePossibleBlanks.trim();
 
     if (searchAvailableKey.find(async (data: Chave) => data.key_available)) {
       const chaveService = new ChaveService();

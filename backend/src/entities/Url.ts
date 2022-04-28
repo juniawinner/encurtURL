@@ -15,5 +15,8 @@ export class Url {
   chave!: string;
 
   @Column()
+  title!: string;
+
+  @Column()
   total_visits!: number;
 }
