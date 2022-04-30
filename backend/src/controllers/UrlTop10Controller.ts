@@ -1,8 +1,12 @@
 import { Request, RequestHandler, Response } from "express";
-import { UrlDTO } from "../dtos/UrlDTO";
+import { UrlTop10Service } from "../services/UrlTop10Service";
 
 export class UrlTop10Controller {
-  dto!: UrlDTO;
+  handle: RequestHandler = async (req: Request, res: Response) => {
+    const service = new UrlTop10Service();
 
-  handle: RequestHandler = async (req: Request, res: Response) => {};
+    const result = await service.execute();
+
+    return res.json(result);
+  };
 }

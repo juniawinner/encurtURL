@@ -1,15 +1,20 @@
 <script setup lang="ts">
-import Home from './components/Home.vue'
-import TheUrl from './components/TheUrl.vue'
-import ProjectAuthor from './components/ProjectAuthor.vue'
+import Home from './components/Home.vue';
+import HomeTop10Url from './components/HomeTop10Url.vue';
+import TheUrl from './components/TheUrl.vue';
+import ProjectAuthor from './components/ProjectAuthor.vue';
 </script>
 
 <template>
   <header>
-    <img alt="EncurtURL logo" class="logo" src="./assets/logo.svg" width="125" />
+    <img class="logo" alt="EncurtURL logo" src="./assets/logo.svg" width="125" />
 
     <div class="wrapper">
       <Home msg="EncurtURL" />
+    </div>
+
+    <div class="top10URL">
+      <HomeTop10Url />
     </div>
   </header>
 
@@ -67,7 +72,8 @@ header {
     display: grid;
     grid-template-areas:
       "logo"
-      "wrapper";
+      "wrapper"
+      "top10URL";
     grid-auto-flow: row;
     grid-template-rows: auto;
     grid-gap: 2%;
@@ -84,6 +90,10 @@ header {
     grid-area: wrapper;
     text-align: left;
     margin: 0 30px 0 0;
+  }
+
+  .top10URL {
+    grid-area: top10URL;
   }
 
   main {
