@@ -32,12 +32,10 @@ h2 {
 
 @media (min-width: 1024px) {
   .greetings h1 {
-    text-align: left;
     font-size: 2rem;
   }
 
   .greetings h2 {
-    text-align: left;
     font-size: 1rem;
   }
 }

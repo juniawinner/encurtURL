@@ -1,8 +1,7 @@
 <template>
-    <div class="author">
-        <article>
+    <section class="project-author">
+        <article class="project">
             <p class="title">EncurtURL <em>- MIT License</em></p>
-            <br>
             <p class="text">
                 Site para encurtamento de URLs.
                 <br>
@@ -11,24 +10,29 @@
                 maximiza a eficiência do Node/Express, através do API/REST que se comunica
                 com a base de dados (TypeORM e MongoDB).
             </p>
-            <address class="contact">
-                <a href="https://github.com/juniawinner"
-                    title="Mulher negra e autodidata na teoria-prática sobre Tecnologia">
-                    <img src="src/assets/github.svg" alt="GitHub de Junia Winner" /> Junia Winner
-                </a>
-            </address>
         </article>
-    </div>
+
+        <address class="contact">
+            <a class="contact-project" href="https://github.com/juniawinner/encurtURL"
+                title="Repositório do EncurtURL no GitHub">
+                <img src="src/assets/github.svg" alt="GitHub do EncurtURL" /> /encurtURL
+            </a>
+
+            <a class="contact-author" href="https://www.linkedin.com/in/junia-winner/"
+                title="Mulher negra e autodidata na teoria-prática sobre Tecnologia">
+                <img src="src/assets/linkedin.svg" alt="LinkedIn de Junia Winner" /> Junia Winner
+            </a>
+        </address>
+    </section>
 </template>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
-article {
+.project-author {
     display: grid;
     grid-template-areas:
-        "title"
-        "text"
+        "project"
         "contact";
     grid-auto-flow: row;
     grid-template-rows: auto;
@@ -39,52 +43,54 @@ article {
     font-family: 'Acme', sans-serif;
     text-align: center;
     color: var(--vt-c-black);
-    margin: 10% 1% 2% 1%;
+    margin: 8% 1% 1%;
     padding: 1%;
+}
+
+.project {
+    grid-area: project;
+    display: grid;
+    grid-template-areas:
+        "title"
+        "text";
+    grid-auto-flow: row;
+    grid-template-rows: auto;
+    grid-gap: 2%;
+    margin: 0 0 2%;
 }
 
 .title {
     grid-area: title;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .text {
     grid-area: text;
-    font-size: 15px;
-    margin: 1% 0;
+    font-size: 14px;
 }
 
 .contact {
     grid-area: contact;
-    font-size: 15px;
+    display: grid;
+    grid-template-areas:
+        "contact-project contact-author";
+    grid-auto-flow: column;
+    grid-template-columns: auto;
+}
+
+.contact-project {
+    grid-area: contact-project;
+    font-size: 14px;
+}
+
+.contact-author {
+    grid-area: contact-author;
+    font-size: 14px;
 }
 
 @media (min-width: 1024px) {
-    article {
-        grid-template-areas:
-            "text title"
-            "text contact";
-        grid-template-columns: 3fr 1fr;
-        grid-auto-flow: column;
-        grid-gap: 3%;
-        text-align: center;
-        margin: 1% 1% 2% 1%;
-    }
-
-    .title {
-        grid-area: title;
-        font-size: 22px;
-        margin: 2% 0;
-    }
-
-    .text {
-        grid-area: text;
-        font-size: 18px;
-    }
-
-    .contact {
-        grid-area: contact;
-        font-size: 18px;
+    .project-author {
+        margin: 4% 0 2% 4%;
     }
 }
 </style>

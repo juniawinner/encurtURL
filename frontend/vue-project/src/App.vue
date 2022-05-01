@@ -34,7 +34,6 @@ import ProjectAuthor from './components/ProjectAuthor.vue';
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
   font-weight: normal;
 }
 
@@ -62,8 +61,9 @@ header {
     display: grid;
     grid-template-areas:
       "header main"
-      "footer footer";
-    grid-template-columns: 1fr 3fr;
+      "header footer";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
     padding: 0 1rem;
   }
 
@@ -76,24 +76,24 @@ header {
       "top10URL";
     grid-auto-flow: row;
     grid-template-rows: auto;
-    grid-gap: 2%;
+    align-items: center;
     border-right: 2px dashed rgb(238, 36, 36);
   }
 
   .logo {
     grid-area: logo;
-    text-align: center;
-    margin: 2rem 2rem;
+    margin: 1rem 6rem;
   }
 
   header .wrapper {
     grid-area: wrapper;
-    text-align: left;
-    margin: 0 30px 0 0;
+    margin: 0 40px 0 0;
   }
 
   .top10URL {
     grid-area: top10URL;
+    margin: 0 40px 0 0;
+    align-self: start;
   }
 
   main {
