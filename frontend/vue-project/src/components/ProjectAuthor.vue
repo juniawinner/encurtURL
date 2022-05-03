@@ -61,12 +61,12 @@
 
 .title {
     grid-area: title;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .text {
     grid-area: text;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .contact {
@@ -80,12 +80,12 @@
 
 .contact-project {
     grid-area: contact-project;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .contact-author {
     grid-area: contact-author;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 @media (min-width: 1024px) {
