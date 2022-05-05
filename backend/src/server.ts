@@ -1,10 +1,12 @@
 import "reflect-metadata";
+import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import { routes } from "./routes";
 import "./database";
-import { env } from "process";
+
+dotenv.config();
 
 const app = express();
 
@@ -19,6 +21,6 @@ app.use(bodyParser.json());
 
 app.use(routes);
 
-app.listen(((env.DOMAIN = "http://localhost:8080/"), 8080), () =>
-  console.log("Express server has started:", env.DOMAIN)
+app.listen(process.env.PORT || 8080, () =>
+  console.log("Express server has started:", process.env.PORT)
 );

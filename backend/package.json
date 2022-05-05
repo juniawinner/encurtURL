@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node src/server.ts",
-    "prestart": "",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
   },
   "keywords": [
@@ -20,6 +19,7 @@
   "dependencies": {
     "body-parser": "^1.19.2",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "mongodb": "^3.6.0",
     "reflect-metadata": "^0.1.13",
