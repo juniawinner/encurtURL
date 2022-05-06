@@ -10,6 +10,8 @@ dotenv.config();
 
 const app = express();
 
+const port = process.env.PORT || 8080;
+
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -21,6 +23,6 @@ app.use(bodyParser.json());
 
 app.use(routes);
 
-app.listen(process.env.PORT || 8080, () =>
-  console.log("Express server has started:", process.env.PORT)
+app.listen(port, () =>
+  console.log(`Express server has started: http://localhost:${port}`)
 );
