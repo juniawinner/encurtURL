@@ -14,14 +14,11 @@
 
         <address class="contact">
             <a class="contact-project" href="https://github.com/juniawinner/encurtURL"
-                title="Repositório do EncurtURL no GitHub">
-                <img src="src/assets/github.png" width="30px" height="30px" alt="GitHub do EncurtURL" /> /encurtURL
+                title="Repositório do EncurtURL no GitHub">EncurtURL
             </a>
 
             <a class="contact-author" href="https://www.linkedin.com/in/junia-winner/"
-                title="Mulher negra e autodidata na teoria-prática sobre Tecnologia">
-                <img src="src/assets/linkedin.png" width="30px" height="30px" alt="LinkedIn de Junia Winner" /> Junia
-                Winner
+                title="LinkedIn da autora do projeto EncurtURL">Junia Winner
             </a>
         </address>
     </section>
