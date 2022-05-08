@@ -15,12 +15,13 @@
         <address class="contact">
             <a class="contact-project" href="https://github.com/juniawinner/encurtURL"
                 title="Repositório do EncurtURL no GitHub">
-                <img src="src/assets/github.svg" alt="GitHub do EncurtURL" /> /encurtURL
+                <img src="src/assets/github.png" width="30px" height="30px" alt="GitHub do EncurtURL" /> /encurtURL
             </a>
 
             <a class="contact-author" href="https://www.linkedin.com/in/junia-winner/"
                 title="Mulher negra e autodidata na teoria-prática sobre Tecnologia">
-                <img src="src/assets/linkedin.svg" alt="LinkedIn de Junia Winner" /> Junia Winner
+                <img src="src/assets/linkedin.png" width="30px" height="30px" alt="LinkedIn de Junia Winner" /> Junia
+                Winner
             </a>
         </address>
     </section>
@@ -76,16 +77,18 @@
         "contact-project contact-author";
     grid-auto-flow: column;
     grid-template-columns: auto;
+    grid-template-rows: auto;
+    align-items: end;
 }
 
 .contact-project {
     grid-area: contact-project;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .contact-author {
     grid-area: contact-author;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 @media (min-width: 1024px) {

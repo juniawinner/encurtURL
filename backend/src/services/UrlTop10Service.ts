@@ -5,6 +5,13 @@ export class UrlTop10Service {
   async execute() {
     const repository = UrlRepository();
 
+    const index = await repository.createCollectionIndex({
+      total_visits: -1,
+      title: 1,
+    });
+
+    console.log(`Index composto: ${index}`);
+
     const search = await repository.find({
       order: { total_visits: "DESC", title: "ASC" },
       skip: 0,
