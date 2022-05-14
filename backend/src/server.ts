@@ -3,10 +3,18 @@ import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+import { AppDataSource } from "./database";
 import { routes } from "./routes";
-import "./database";
 
 dotenv.config();
+
+AppDataSource.initialize()
+  .then(() => {
+    console.log("Data Source has been initialized!");
+  })
+  .catch((err) => {
+    console.error("Error during Data Source initialization", err);
+  });
 
 const app = express();
 
@@ -14,7 +22,7 @@ const port = process.env.PORT || 8080;
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://red-island-0c877810f.1.azurestaticapps.net",
     optionsSuccessStatus: 200,
   })
 );

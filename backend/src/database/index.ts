@@ -16,11 +16,3 @@ export const AppDataSource = new DataSource({
   migrations: [UrlMigration1649316703628, ChaveMigration1649320096030],
   subscribers: [],
 });
-
-AppDataSource.initialize()
-  .then(() => {
-    console.log("Data Source has been initialized!");
-  })
-  .catch((err) => {
-    console.error("Error during Data Source initialization", err);
-  });
