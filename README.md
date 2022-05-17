@@ -17,30 +17,38 @@ vídeo
 
 # 📜 Índice
 
-1. [Sobre o projeto](#📜-sobre-o-projeto)
-1. [Funcionalidades](#🛠️-funcionalidades)
-1. [Design Responsivo](#💻📱-design-responsivo)
-1. [Tecnologias utilizadas](#🛠️-tecnologias-utilizadas)
-1. [Como executar o projeto](#🗂️-como-executar-o-projeto)
-1. [Autora](#👩🏾‍💻-autora)
+1. [Sobre o projeto](#-sobre-o-projeto)
+1. [Funcionalidades](#-funcionalidades)
+1. [Design Responsivo](#-design-responsivo)
+1. [Tecnologias utilizadas](#-tecnologias-utilizadas)
+1. [Como executar o projeto](#-como-executar-o-projeto)
+1. [Autora](#-autora)
 
 # 🔖 Sobre o projeto
 
 Com design interativo, os objetivos do site são encurtar URLs e cativar os usuários pelas funcionalidades do projeto, a exemplo do contador de visitas às URLs favoritas.
 
-O front-end é organizado em componentes do Vue.JS, que apresentam as informações na tela de acordo com a reatividade desencadeada pelas respostas do servidor Web às interações do cliente. Nesse sentido, o servidor foi desenvolvido no formato de API/REST, com base na Arquitetura em Camadas.
+O front-end é organizado em componentes do VueJS, que apresentam as informações na tela de acordo com a reatividade desencadeada pelas respostas do servidor Web às interações do cliente. Nesse sentido, o servidor foi desenvolvido no formato de API/REST, com base na Arquitetura em Camadas.
 
 Para exemplificar através da funcionalidade de encurtamento, o componente pai (UrlRoleShorten.vue) é responsável apenas por fazer a requisição ao servidor, enquanto o componente filho (UrlRoleShortenDashboard.vue) exibe a resposta da requisição.
 
-Essa divisão de tarefas é possível devido a Injeção de Dependências do Vue.JS, chamadas de "Provide" e "Inject". Ou seja, o componente pai fornece (*provide*) a resposta do servidor para ser injetada (*inject*) no componente filho. A ilustração abaixo demonstra o processo de comunicação entre cliente e servidor:
+Essa divisão de tarefas é possível devido a Injeção de Dependências do VueJS, chamadas de "Provide" e "Inject". Ou seja, o componente pai fornece (*provide*) a resposta do servidor para ser injetada (*inject*) no componente filho. A ilustração abaixo demonstra o processo de comunicação entre cliente e servidor:
 
 ![Comunicação entre cliente e servidor](https://ik.imagekit.io/x4ikoq975/C-S_Xgp6lFYft.png?ik-sdk-version=javascript-1.4.3&updatedAt=1652712941406)
 
-No lado do servidor Web, os *Services* responsáveis por criar as URLs curtas possuem um *Decorator* chamado “@generateEncurtUrl”. O *Decorator* contribuiu para isolar e reutilizar o código que gera, randomicamente, as chaves identificadoras da URL curta. Essas chaves são únicas para cada URL criada, pois são o *path* do recurso no servidor.
+No lado do servidor Web, o *Service* responsável por criar as URLs curtas possui um *Decorator* chamado “@generateEncurtUrl”. O *Decorator* contribuiu para isolar e reutilizar o código que gera, randomicamente, as chaves identificadoras da URL curta. Essas chaves são únicas para cada URL criada, pois são o *path* do recurso no servidor. A seguinte figura esclarece esse processo:
 
-Quando o usuário exclui a URL curta, todas as informações desse recurso são apagadas da *collection* “url” do *database*. Neste processo, a chave identificadora é reciclada, porque é salva em outra *collection*, chamada de “chave”. Tal mecanismo tem o objetivo de conservar as possibilidades de combinar sete caracteres alfanuméricos (A-Z, a-z e 0-9) para gerar novas chaves pelo servidor, caso não existam mais chaves recicladas disponíveis.
+![Processo para criar URLs curtas](https://ik.imagekit.io/x4ikoq975/G-E_OCxxAhjNX.png?ik-sdk-version=javascript-1.4.3&updatedAt=1652799963324)
 
-As URLs curtas relacionam-se as URLs originais mediante o redirecionamento, tendo em vista que cada *document* da *collection* “url” contém os dados necessários para esse processo, como mostra a ilustração a seguir:
+Quando o usuário exclui a URL curta, todas as informações existentes no *document* desse recurso são apagadas da *collection* “url”. Neste processo, a chave identificadora é reciclada, porque é salva em outra *collection*, chamada de “chave”. Tal mecanismo tem o objetivo de conservar as possibilidades de combinar sete caracteres alfanuméricos (A-Z, a-z e 0-9) para gerar novas chaves pelo servidor, caso não existam mais chaves disponíveis. Veja a figura abaixo:
+
+![Reutilização de chaves identificadoras](https://ik.imagekit.io/x4ikoq975/R-C_BoYIrTMb3.png?ik-sdk-version=javascript-1.4.3&updatedAt=1652799479743)
+
+As URLs curtas relacionam-se as URLs originais mediante o redirecionamento (*redirect*), tendo em vista que cada *document* da *collection* “url” contém os dados necessários para esse processo, como mostra a ilustração a seguir:
+
+![Contagem de visitas e o redirecionamento para URL Original](https://ik.imagekit.io/x4ikoq975/R-T_NIDoa0LRR.png?ik-sdk-version=javascript-1.4.3&updatedAt=1652801532935)
+
+Portanto, o projeto EncurtURL proporcionou aprendizagens sobre: Injeção de Dependências; codificação de Decorators e de funções assíncronas; conceitos da Programação Orientada a Objetos (classes, propriedades e métodos); e boas práticas na construção de API/REST.
 
 # 🛠️ Funcionalidades
 
@@ -70,7 +78,7 @@ As URLs curtas relacionam-se as URLs originais mediante o redirecionamento, tend
  
 ![Homepage do EncurtURL](https://ik.imagekit.io/x4ikoq975/c1_vT1L25oKi.png?ik-sdk-version=javascript-1.4.3&updatedAt=1652612489844)
  
-![Top 10 e Encurtador de URLs](https://ik.imagekit.io/x4ikoq975/c2_up-URwYE9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1652612571804)
+![Top 10 e Encurtador de URLs](https://ik.imagekit.io/x4ikoq975/c2_SEUipX2MZ.png?ik-sdk-version=javascript-1.4.3&updatedAt=1652714578089)
 
 # 🚀 Tecnologias utilizadas
 
