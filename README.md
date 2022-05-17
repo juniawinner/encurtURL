@@ -9,7 +9,7 @@
 
 # *EncurtURL* - O encurtamento dos seus links favoritos é útil, rápido e leve!
 
-vídeo
+vídeos
 
 <h3 align="center">
 <a href="https://red-island-0c877810f.1.azurestaticapps.net" title="EncurtURL">Acessar a demonstração</a>
