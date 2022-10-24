@@ -11,10 +11,6 @@
 
 [![Vídeo de demonstação do projeto](https://ik.imagekit.io/x4ikoq975/EU-capa_S2XbmI4pF.png?ik-sdk-version=javascript-1.4.3&updatedAt=1652887734996)](https://clipchamp.com/watch/wqSZDCraW1J)
 
-<h3 align="center">
-<a href="https://red-island-0c877810f.1.azurestaticapps.net" title="EncurtURL">Site do projeto</a>
-</h3>
-
 # 📜 Índice
 
 1. [Sobre o projeto](#-sobre-o-projeto)
